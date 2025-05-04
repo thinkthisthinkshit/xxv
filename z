@@ -1,8 +1,7 @@
+bot.py
 import logging
 import sys
 import uuid
-import hmac
-import hashlib
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.utils import executor
@@ -17,23 +16,25 @@ logging.basicConfig(
     stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
+logger.info("Начало выполнения скрипта")
 
 # Настройки
 TOKEN = "your_bot_token"  # Замени на токен от @BotFather
 YOOMONEY_WALLET = "your_wallet_number"  # Замени на номер кошелька YooMoney (41001...)
-YOOMONEY_SECRET = "your_notification_secret"  # Замени на секрет для уведомлений (из настроек YooMoney)
-WEBHOOK_URL = "your_koyeb_url/webhook"  # Замени на URL от Koyeb (например, https://your-app.koyeb.app/webhook)
+YOOMONEY_SECRET = "your_notification_secret"  # Замени на секрет для уведомлений
 
 # Инициализация бота
+logger.info("Попытка инициализации бота")
 try:
     bot = Bot(token=TOKEN)
-    logger.info("Бот инициализирован")
+    logger.info("Бот успешно инициализирован")
 except Exception as e:
     logger.error(f"Ошибка инициализации бота: {e}")
     sys.exit(1)
 
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
+logger.info("Диспетчер инициализирован")
 
 # Обработчик команды /start
 @dp.message_handler(commands=['start'])
@@ -122,42 +123,6 @@ async def pay_command(message_or_callback: types.Message | types.CallbackQuery):
         logger.error(f"Ошибка в обработчике /pay: {e}")
         await bot.send_message(chat_id, "Произошла ошибка при создании платежа, попробуйте позже.")
 
-# Webhook для YooMoney уведомлений
-@dp.message_handler(content_types=['webhook'])
-async def handle_yoomoney_webhook(update: dict):
-    try:
-        # Проверка подписи
-        notification_type = update.get("notification_type")
-        amount = update.get("amount")
-        label = update.get("label")
-        datetime = update.get("datetime")
-        sender = update.get("sender")
-        codepro = update.get("codepro", "false")
-        currency = update.get("currency")
-        sha1_hash = update.get("sha1_hash")
-
-        check_string = (
-            f"{notification_type}&{amount}&{currency}&{label}&"
-            f"{datetime}&{sender}&{codepro}&{YOOMONEY_WALLET}&{YOOMONEY_SECRET}"
-        )
-        calculated_hash = hmac.new(
-            YOOMONEY_SECRET.encode(), check_string.encode(), hashlib.sha1
-        ).hexdigest()
-
-        if calculated_hash != sha1_hash:
-            logger.error("Неверная подпись уведомления")
-            return
-
-        if notification_type == "p2p-incoming":
-            user_id = None
-            # Предполагаем, что label содержит user_id (можно улучшить)
-            # В реальном проекте храни label:user_id в базе данных
-            logger.info(f"Получено уведомление об оплате: amount={amount}, label={label}")
-            await bot.send_message(user_id or 123456789, f"Оплата на сумму {amount} RUB получена! Доступ к каналу предоставлен.")
-            logger.info(f"Отправлено уведомление об оплате для label={label}")
-    except Exception as e:
-        logger.error(f"Ошибка в обработчике webhook: {e}")
-
 # Запуск бота
 async def on_shutdown(dp):
     logger.info("Закрытие бота")
@@ -167,9 +132,37 @@ def on_startup(_):
     logger.info("Бот запущен")
 
 if __name__ == "__main__":
+    logger.info("Запуск polling")
     try:
-        logger.info("Запуск polling")
         executor.start_polling(dp, skip_updates=True, on_startup=on_startup, on_shutdown=on_shutdown)
     except Exception as e:
         logger.error(f"Ошибка запуска polling: {e}")
         sys.exit(1)
+
+
+
+
+
+
+
+require
+aiogram==2.25.2 requests==2.31.0
+
+
+
+
+
+runtime.txt
+python-3.10.12
+
+
+
+
+
+
+PROC
+worker: python bot.py
+
+
+
+
