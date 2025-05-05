@@ -164,3 +164,35 @@ print(sha1_hash)
 
 
 curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00¤cy=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=3deb017c-a5de-4fd8-9c43-0e916e5ab085&sha1_hash=9f8e7d6c5b4a3e2f1a0b9c8d7e6f5a4b3c2d1e0&status=success"
+
+
+
+
+
+
+def verify_yoomoney_notification(data):
+    params = [
+        data.get("notification_type", ""),
+        data.get("operation_id", ""),
+        str(data.get("amount", "")),
+        data.get("currency", ""),
+        data.get("datetime", ""),
+        data.get("sender", ""),
+        data.get("codepro", ""),
+        NOTIFICATION_SECRET,
+        data.get("label", "")
+    ]
+    sha1_hash = hashlib.sha1("&".join(params).encode()).hexdigest()
+    return sha1_hash == data.get("sha1_hash", "")
+
+
+
+
+
+
+
+
+
+
+
+
