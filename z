@@ -193,6 +193,4 @@ def verify_yoomoney_notification(data):
 
 
 
-curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=3deb017c-a5de-4fd8-9c43-0e916e5ab085&sha1_hash=4c3b2a1f9e8d7c6b5a4e3d2c1b0a9f8e7d6c5b4&status=success"
-
-
+curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=c95baa49-5b30-480e-91ff-3cae81c27009&sha1_hash=6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5&status=success"
