@@ -1,10 +1,4 @@
-curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=c95baa49-5b30-480e-91ff-3cae81c27009&sha1_hash=76ec0aa99e49324536a4bf2a97e97bca59975988&status=success"
-curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00¤cy=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=3b5136d7-fdb6-43b5-9d84-e2cb07ce8e64&sha1_hash=wronghash&status=success"
-
-
-curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=3b5136d7-fdb6-43b5-9d84-e2cb07ce8e64&sha1_hash=cd76a769e83543b4e57a86d6bcf14ea05150ebf0&status=success"
-
-
+curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00¤cy=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=094555d4-552d-42ab-b27f-a5d47b7d7e52&sha1_hash=wronghash&status=success"
 
 import logging
 import sys
