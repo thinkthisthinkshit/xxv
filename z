@@ -1,5 +1,4 @@
-curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00¤cy=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=094555d4-552d-42ab-b27f-a5d47b7d7e52&sha1_hash=wronghash&status=success"
-
+curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=094555d4-552d-42ab-b27f-a5d47b7d7e52&sha1_hash=wronghash&status=success"
 import logging
 import sys
 import sqlite3
