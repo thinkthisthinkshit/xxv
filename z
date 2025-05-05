@@ -6,7 +6,6 @@ curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomo
 
 
 
-
 import logging
 import sys
 import sqlite3
