@@ -170,20 +170,26 @@ curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomo
 
 
 
-def verify_yoomoney_notification(data):
-    params = [
-        data.get("notification_type", ""),
-        data.get("operation_id", ""),
-        str(data.get("amount", "")),
-        data.get("currency", ""),
-        data.get("datetime", ""),
-        data.get("sender", ""),
-        data.get("codepro", ""),
-        NOTIFICATION_SECRET,
-        data.get("label", "")
-    ]
-    sha1_hash = hashlib.sha1("&".join(params).encode()).hexdigest()
-    return sha1_hash == data.get("sha1_hash", "")
+import hashlib
+
+params = [
+    "p2p-incoming",
+    "test-op",
+    "500.0",  # str(500.00) в webhook.py даёт "500.0"
+    "643",
+    "2025-05-05T20:50:56Z",
+    "41001000040",
+    "false",
+    "CoqQlgE3E5cTzyAKY1LSiLU1",
+    "c95baa49-5b30-480e-91ff-3cae81c27009"
+]
+sha1_hash = hashlib.sha1("&".join(params).encode()).hexdigest()
+print(sha1_hash)
+
+
+
+
+
 
 
 
