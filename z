@@ -137,3 +137,25 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Критическая ошибка при запуске: {e}\n{traceback.format_exc()}")
         sys.exit(1)
+
+
+
+
+
+
+
+
+import hashlib
+params = [
+    "p2p-incoming",
+    "test-op",
+    "500.00",
+    "643",
+    "2025-05-05T18:58:27Z",
+    "41001000040",
+    "false",
+    "your_notification_secret",  # Замени на твой NOTIFICATION_SECRET
+    "ba65d1fc-2e83-4318-b3be-d27193cee1de"
+]
+sha1_hash = hashlib.sha1("&".join(params).encode()).hexdigest()
+print(sha1_hash)
