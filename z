@@ -1,3 +1,15 @@
+import psycopg2
+
+   DB_CONNECTION = "postgresql://postgres:[YOUR-PASSWORD]@db.<project_ref>.supabase.co:5432/postgres"  # Замени на свою строку
+   try:
+       conn = psycopg2.connect(DB_CONNECTION)
+       print("Подключение успешно!")
+       conn.close()
+   except Exception as e:
+       print(f"Ошибка: {e}")
+
+
+
 import logging
 import sys
 import psycopg2
