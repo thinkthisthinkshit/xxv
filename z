@@ -1,3 +1,9 @@
+curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=<новый_label>&sha1_hash=<новый_хэш>&status=success"
+
+
+
+
+
 curl -v -X POST https://favourite-brinna-createthisshit-eca5920c.koyeb.app/yoomoney_notify -d "notification_type=p2p-incoming&operation_id=test-op&amount=500.00&currency=643&datetime=2025-05-05T20:50:56Z&sender=41001000040&codepro=false&label=e672165f-28f6-4354-9fd2-228c73aa9d7b&sha1_hash=wronghash&status=success"
 
 
