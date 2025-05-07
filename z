@@ -28,9 +28,10 @@ BOTS = {
         "YOOMONEY_WALLET": "4100118178122985",
         "NOTIFICATION_SECRET": "CoqQlgE3E5cTzyAKY1LSiLU1",
         "PRIVATE_CHANNEL_ID": -1002640947060,
+        "PRICE": 2.00,
         "DESCRIPTION": (
             "Тариф: Базовый\n"
-            "Стоимость: 2.00 🇷🇺RUB\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
             "Срок действия: 1 месяц\n\n"
             "Доступ к каналу 'Мой кайф' с базовым контентом."
         )
@@ -40,9 +41,10 @@ BOTS = {
         "YOOMONEY_WALLET": "<YOUR_SECOND_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_SECOND_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
+        "PRICE": 5.00,
         "DESCRIPTION": (
             "Тариф: Премиум\n"
-            "Стоимость: 2.00 🇷🇺RUB\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
             "Срок действия: 1 месяц\n\n"
             "Эксклюзивный доступ к каналу 'Мой кайф Премиум' с бонусами."
         )
@@ -52,91 +54,169 @@ BOTS = {
         "YOOMONEY_WALLET": "<YOUR_THIRD_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_THIRD_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot4": {
         "TOKEN": "<YOUR_FOURTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_FOURTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_FOURTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot5": {
         "TOKEN": "<YOUR_FIFTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_FIFTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_FIFTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot6": {
         "TOKEN": "<YOUR_SIXTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_SIXTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_SIXTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot7": {
         "TOKEN": "<YOUR_SEVENTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_SEVENTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_SEVENTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot8": {
         "TOKEN": "<YOUR_EIGHTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_EIGHTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_EIGHTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot9": {
         "TOKEN": "<YOUR_NINTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_NINTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_NINTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot10": {
         "TOKEN": "<YOUR_TENTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_TENTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_TENTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot11": {
         "TOKEN": "<YOUR_ELEVENTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_ELEVENTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_ELEVENTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot12": {
         "TOKEN": "<YOUR_TWELFTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_TWELFTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_TWELFTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot13": {
         "TOKEN": "<YOUR_THIRTEENTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_THIRTEENTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_THIRTEENTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot14": {
         "TOKEN": "<YOUR_FOURTEENTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_FOURTEENTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_FOURTEENTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     },
     "bot15": {
         "TOKEN": "<YOUR_FIFTEENTH_BOT_TOKEN>",
         "YOOMONEY_WALLET": "<YOUR_FIFTEENTH_WALLET>",
         "NOTIFICATION_SECRET": "<YOUR_FIFTEENTH_SECRET>",
         "PRIVATE_CHANNEL_ID": -1002640947060,
-        "DESCRIPTION": "Тариф: Стандарт\nСтоимость: 2.00 RUB\nСрок: 1 месяц\n\nДоступ к каналу 'Мой кайф'."
+        "PRICE": 2.00,
+        "DESCRIPTION": (
+            "Тариф: Стандарт\n"
+            "Стоимость: {price} 🇷🇺RUB\n"
+            "Срок действия: 1 месяц\n\n"
+            "Доступ к каналу 'Мой кайф'."
+        )
     }
 }
 
@@ -191,7 +271,8 @@ for bot_id, dp in dispatchers.items():
             logger.info(f"[{bot_id}] Получена команда /start от user_id={user_id}")
             keyboard = InlineKeyboardMarkup()
             keyboard.add(InlineKeyboardButton(text="Пополнить", callback_data=f"pay_{bot_id}"))
-            welcome_text = BOTS[bot_id]["DESCRIPTION"]
+            config = BOTS[bot_id]
+            welcome_text = config["DESCRIPTION"].format(price=config["PRICE"])
             await message.answer(welcome_text, reply_markup=keyboard)
             logger.info(f"[{bot_id}] Отправлен ответ на /start для user_id={user_id}")
         except Exception as e:
@@ -218,7 +299,7 @@ for bot_id, dp in dispatchers.items():
                 "quickpay-form": "shop",
                 "paymentType": "AC",
                 "targets": f"Оплата подписки для user_id={user_id}",
-                "sum": 2.00,
+                "sum": config["PRICE"],
                 "label": payment_label,
                 "receiver": config["YOOMONEY_WALLET"],
                 "successURL": f"https://t.me/{(await bots[bot_id].get_me()).username}"
@@ -255,7 +336,7 @@ for bot_id, dp in dispatchers.items():
             
             keyboard = InlineKeyboardMarkup()
             keyboard.add(InlineKeyboardButton(text="Оплатить", url=payment_url))
-            await bots[bot_id].send_message(chat_id, "Перейдите по ссылке для оплаты 2 рублей:", reply_markup=keyboard)
+            await bots[bot_id].send_message(chat_id, f"Перейдите по ссылке для оплаты {config['PRICE']} рублей:", reply_markup=keyboard)
             logger.info(f"[{bot_id}] Отправлена ссылка на оплату для user_id={user_id}, label={payment_label}")
         except Exception as e:
             logger.error(f"[{bot_id}] Ошибка в обработчике /pay: {e}\n{traceback.format_exc()}")
