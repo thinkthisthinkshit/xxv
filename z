@@ -125,23 +125,29 @@ bots = {}
 dispatchers = {}
 for bot_id, config in BOTS.items():
     try:
+        logger.info(f"Попытка инициализации бота {bot_id}")
         bots[bot_id] = Bot(token=config["TOKEN"])
         storage = MemoryStorage()
         dispatchers[bot_id] = Dispatcher(bots[bot_id], storage=storage)
-        logger.info(f"Бот {bot_id} инициализирован")
+        logger.info(f"Бот {bot_id} и диспетчер успешно инициализированы")
     except Exception as e:
         logger.error(f"Ошибка инициализации бота {bot_id}: {e}")
         sys.exit(1)
 
 # Инициализация PostgreSQL
 def init_postgres_db():
-    conn = psycopg2.connect(DB_CONNECTION)
-    c = conn.cursor()
-    for bot_id in BOTS:
-        c.execute(f'''CREATE TABLE IF NOT EXISTS payments_{bot_id}
-                     (label TEXT PRIMARY KEY, user_id TEXT, status TEXT)''')
-    conn.commit()
-    conn.close()
+    try:
+        conn = psycopg2.connect(DB_CONNECTION)
+        c = conn.cursor()
+        for bot_id in BOTS:
+            c.execute(f'''CREATE TABLE IF NOT EXISTS payments_{bot_id}
+                         (label TEXT PRIMARY KEY, user_id TEXT, status TEXT)''')
+        conn.commit()
+        conn.close()
+        logger.info("PostgreSQL база данных успешно инициализирована")
+    except Exception as e:
+        logger.error(f"Ошибка инициализации PostgreSQL: {e}")
+        sys.exit(1)
 
 init_postgres_db()
 
@@ -201,13 +207,14 @@ for bot_id, dp in dispatchers.items():
                       (payment_label, user_id, "pending"))
             conn.commit()
             conn.close()
+            logger.info(f"[{bot_id}] Сохранено в PostgreSQL: label={payment_label}, user_id={user_id}")
             
             # Отправка label:user_id на /save_payment
             async with ClientSession() as session:
                 try:
                     async with session.post(f"{HOST_URL}{SAVE_PAYMENT_PATH}/{bot_id}", json={"label": payment_label, "user_id": user_id}) as response:
                         if response.status == 200:
-                            logger.info(f"[{bot_id}] label={payment_label} сохранён для user_id={user_id}")
+                            logger.info(f"[{bot_id}] label={payment_label} сохранён на /save_payment для user_id={user_id}")
                         else:
                             logger.error(f"[{bot_id}] Ошибка сохранения на /save_payment: {await response.text()}")
                             await bots[bot_id].send_message(chat_id, "Ошибка сервера, попробуйте позже.")
@@ -223,7 +230,7 @@ for bot_id, dp in dispatchers.items():
             logger.info(f"[{bot_id}] Отправлена ссылка на оплату для user_id={user_id}, label={payment_label}")
         except Exception as e:
             logger.error(f"[{bot_id}] Ошибка в обработчике /pay: {e}")
-            await bots[bot_id].send_message(chat_id, "Произошла ошибка при создания платежа, попробуйте позже.")
+            await bots[bot_id].send_message(chat_id, "Произошла ошибка при создании платежа, попробуйте позже.")
 
 # Проверка подлинности YooMoney уведомления
 def verify_yoomoney_notification(data, bot_id):
